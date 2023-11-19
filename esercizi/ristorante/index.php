@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu del Ristorante</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<style>
+body{
+  background-color: #60c8e6;
+  margin: 0px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+</style>
 </head>
 
 <body>
 <div class="container mt-5">
-  <h1 class="mb-4">Menu del Ristorante da Gigi</h1>
+  <h1 class="mb-4"><b> Menu del Ristorante da Gigi</b></h1>
   <?php
     $menu = array("Rigatoni alla carbonara"=>8.50, "Pizza margherita"=>6.99, "Tagliatelle al ragù"=>11.00, "Caffè"=>1.50, "Tiramisù"=>4.50);
     echo '<div class="list-group">';
