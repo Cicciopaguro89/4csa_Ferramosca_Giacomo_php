@@ -15,8 +15,7 @@
 <div class="container  d-flex justify-content-center align-items-center">
 <h1>
 <?php 
-if ($_POST['password'] == "info2023")
-{
+if ($_POST['password'] == "info2023"){
 
     echo "LA PASSWORD E' CORRETTA";
 } else{
@@ -32,3 +31,102 @@ if ($_POST['password'] == "info2023")
 
 
 </div>
+
+
+
+
+<div class="container text-center min-vh-100">
+  <div class="row">
+    <div class="col">
+    <?php 
+    if ($_POST['password'] == "info2023"){
+
+        echo "NOME";
+    }
+    ?>
+    </div>
+
+    <div class="col">
+
+    <?php 
+    if ($_POST['password'] == "info2023"){
+
+        echo $_POST['nome'];
+    }
+    ?>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+    <?php 
+    if ($_POST['password'] == "info2023"){
+
+        echo "COGNOME";
+    }
+    ?>
+    </div>
+    <div class="col">
+
+    <?php 
+    if ($_POST['password'] == "info2023"){
+
+        echo $_POST['cognome'];
+    }
+    ?>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+    <?php 
+    if ($_POST['password'] == "info2023"){
+
+        echo "ETA'";
+    }
+    ?>
+    </div>
+    <div class="col">
+
+    <?php 
+    if ($_POST['password'] == "info2023"){
+
+        echo $_POST['età'];
+    }
+    ?>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+    <?php 
+    if ($_POST['password'] == "info2023"){
+
+        echo "SPORT PREFERITO";
+    }
+    ?>    </div>
+    <div class="col">
+
+    <?php 
+    if ($_POST['password'] == "info2023"){
+
+        echo $_POST['sport_preferito'];
+    }
+    ?>
+
+    </div>
+  </div>
+</div>
+
+
+
+<?php   
+
+$colore = $_POST['colore_sfondo'];
+echo "body bgcolor = $colore"
+
+?>
+</body>
