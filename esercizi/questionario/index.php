@@ -1,46 +1,49 @@
-<?php
-session_start();
-if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true) 
-{
-    header("Location: index.php");
-    exit;
-}
-
-if (!isset($_SESSION['login_attempts'])) 
-{
-    $_SESSION['login_attempts'] = 0;
-}
-
-$attemptsLimit = 3;
-if ($_SESSION['login_attempts'] >= $attemptsLimit) 
-{
-    echo "Limite di tentativi superato. Riprova più tardi.";
-    session_unset();
-    session_destroy();
-    exit;
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') 
-{
-    $password = "info2023";
-    $attemptedPassword = isset($_POST['password']) ? $_POST['password'] : '';
-
-    if ($attemptedPassword === $password)
-     {
-
-        $_SESSION['authenticated'] = true;
-        $_SESSION['login_attempts'] = 0; 
-        header("Location: dati.php");
-        exit;
-    } else 
-    {
-        $_SESSION['login_attempts']++;
-        echo "Password errata. Tentativi rimasti: " . ($attemptsLimit - $_SESSION['login_attempts']);
-    }
-}
-?>
 <!DOCTYPE html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+      crossorigin="anonymous">
 
-<html lang="en">
 
-</html>
+
+</head>
+
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+        crossorigin="anonymous"></script>
+
+<div class="container min-vh-100 d-flex justify-content-center align-items-center">
+<form method="POST" action="accesso.php">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome" name="nome">
+  </div>
+  <div class="mb-3">
+    <label for="cognome" class="form-label">Cognome</label>
+    <input type="text" class="form-control" id="cognome" name="cognome">
+  </div>
+  <div class="mb-3">
+    <label for="età" class="form-label">Età</label>
+    <input type="text" class="form-control" id="età" name="età">
+  </div>
+  <div class="mb-3">
+    <label for="sport preferito" class="form-label">Sport Preferito</label>
+    <input type="text" class="form-control" id="sport_preferito" name="sport_preferito">
+  </div>
+  <div class="mb-3">
+    <label for="colore sfondo" class="form-label">Colore sfondo</label>
+    <input type="color" class="form-control" id="colore_sfondo" name="colore_sfondo">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Invio</button>
+</form>
+
+</div>
+
+</body>
