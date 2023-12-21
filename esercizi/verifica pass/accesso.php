@@ -5,8 +5,9 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
       crossorigin="anonymous">
       <style>
-    body {
-      background-color: <?php echo $_POST['colore_sfondo']; ?>;
+    body 
+    {
+      background-color: <?php echo $_GET['colore_sfondo']; ?>;
     }
   </style>
 </head>
@@ -19,109 +20,41 @@
 <div class="container  d-flex justify-content-center align-items-center">
 <h1>
 <?php 
-if ($_GET['password'] == "info2023" && $_GET['utente'] == 'utente'){
-
+if ($_GET['password'] == "password" && $_GET['utente'] == 'utente')
+{
     echo 'Bentornato '.$_GET['utente'];
-
-} else{
-
-    echo "PASSWORD O UTENTE SBAGLIATI, RITENTA";
+} else
+{
+  echo "PASSWORD O UTENTE SBAGLIATI, RITENTA";
 }
 ?>
 <div class="container d-flex justify-content-center align-items-center">
-
-<h6><a href="index.html">TORNA ALLA HOME</a></h6>
-
+<h6><a href="index.php">TORNA ALLA HOME</a></h6>
 </div>
-
-
 </div>
-
-
-
-
 <div class="container text-center min-vh-100">
   <div class="row">
     <div class="col">
-    <?php 
-    if ($_GET['password'] == "info2023"){
+    <?php
+    if ($_GET['password'] == "password" && $_GET['utente'] == 'utente') 
+    {
+        $dettagli = 
+        [
+            ['UTENTE', $_GET['utente']],
+            ['PASSWORD', $_GET['password']],
+            ['ETA', $_GET['età']],
+            ['SPORT PREFERITO', $_GET['sport_preferito']],
+        ];
 
-        echo "UTENTE:";
+        foreach ($dettagli as $info) 
+        {
+            echo "<div class='row'>";
+            echo "<div class='col'>" . $info[0] . "</div>";
+            echo "<div class='col'>" . $info[1] . "</div>";
+            echo "</div>";
+        }
     }
     ?>
-    </div>
-
-    <div class="col">
-
-    <?php 
-    if ($_GET['password'] == "info2023"){
-
-        echo $_GET['utente'];
-    }
-    ?>
-
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-    <?php 
-    if ($_GET['password'] == "info2023"){
-
-        echo "PASSWORD";
-    }
-    ?>
-    </div>
-    <div class="col">
-
-    <?php 
-    if ($_GET['password'] == "info2023"){
-
-        echo $_GET['password'];
-    }
-    ?>
-
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-    <?php 
-    if ($_GET['password'] == "info2023"){
-
-        echo "ETA'";
-    }
-    ?>
-    </div>
-    <div class="col">
-
-    <?php 
-    if ($_GET['password'] == "info2023"){
-
-        echo $_GET['età'];
-    }
-    ?>
-
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-    <?php 
-    if ($_GET['password'] == "info2023"){
-
-        echo "SPORT PREFERITO";
-    }
-    ?>    </div>
-    <div class="col">
-
-    <?php 
-    if ($_GET['password'] == "info2023"){
-
-        echo $_GET['sport_preferito'];
-    }
-    ?>
-
     </div>
   </div>
 </div>

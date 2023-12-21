@@ -7,12 +7,12 @@
     <form action="tabella.php" method="get">
     <div class="form-group">
     <label for="testo">Inserisci il testo:</label>
-    <input type="text" class="form-control "testo" required><br>
+    <input type="text" name="testo" required><br>
     <label for="righe">Inserisci A (n°righe):</label>
     <input type="number" name="righe" required><br>
     <label for="colonne">Inserisci B (n°colonne):</label>
     <input type="number" name="colonne" required><br>
-    <input type="submit" "Genera Tabella">
+    <input type="submit" value="Genera Tabella">
     </div>
     </form>
 </html>
