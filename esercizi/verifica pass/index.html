@@ -15,10 +15,22 @@
         crossorigin="anonymous"></script>
 
 <div class="container min-vh-100 d-flex justify-content-center align-items-center">
-<form method="POST" action="accesso.php">
+<form method="get" action="accesso.php">
   <div class="mb-3">
-    <label for="nome" class="form-label">Username:</label>
-    <input type="text" class="form-control" id="nome" name="nome">
+    <label for="utente" class="form-label">Utente:</label>
+    <input type="text" class="form-control" id="utente" name="utente">
+  </div>
+  <div class="mb-3">
+    <label for="età" class="form-label">Età:</label>
+    <input type="text" class="form-control" id="età" name="età">
+  </div>
+  <div class="mb-3">
+    <label for="sport preferito" class="form-label">Sport Preferito:</label>
+    <input type="text" class="form-control" id="sport_preferito" name="sport_preferito">
+  </div>
+  <div class="mb-3">
+    <label for="colore sfondo" class="form-label">Colore sfondo:</label>
+    <input type="color" class="form-control" id="colore_sfondo" name="colore_sfondo">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password:</label>

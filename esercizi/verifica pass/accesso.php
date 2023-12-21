@@ -19,12 +19,13 @@
 <div class="container  d-flex justify-content-center align-items-center">
 <h1>
 <?php 
-if ($_POST['password' && 'utente'] == "passwordSegreta" && "utente"){
+if ($_GET['password'] == "info2023" && $_GET['utente'] == 'utente'){
 
-    echo "BENVENUTO UTENTE";
+    echo 'Bentornato '.$_GET['utente'];
+
 } else{
 
-    echo "PASSWORD O UTENTE SBAGLIATO, INSERISCI NUOVAMENTE";
+    echo "PASSWORD O UTENTE SBAGLIATI, RITENTA";
 }
 ?>
 <div class="container d-flex justify-content-center align-items-center">
@@ -43,9 +44,9 @@ if ($_POST['password' && 'utente'] == "passwordSegreta" && "utente"){
   <div class="row">
     <div class="col">
     <?php 
-    if ($_POST['password'] == "info2023"){
+    if ($_GET['password'] == "info2023"){
 
-        echo "NOME";
+        echo "UTENTE:";
     }
     ?>
     </div>
@@ -53,13 +54,84 @@ if ($_POST['password' && 'utente'] == "passwordSegreta" && "utente"){
     <div class="col">
 
     <?php 
-    if ($_POST['password'] == "info2023"){
+    if ($_GET['password'] == "info2023"){
 
-        echo $_POST['nome'];
+        echo $_GET['utente'];
     }
     ?>
 
     </div>
   </div>
+
+  <div class="row">
+    <div class="col">
+    <?php 
+    if ($_GET['password'] == "info2023"){
+
+        echo "PASSWORD";
+    }
+    ?>
+    </div>
+    <div class="col">
+
+    <?php 
+    if ($_GET['password'] == "info2023"){
+
+        echo $_GET['password'];
+    }
+    ?>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+    <?php 
+    if ($_GET['password'] == "info2023"){
+
+        echo "ETA'";
+    }
+    ?>
+    </div>
+    <div class="col">
+
+    <?php 
+    if ($_GET['password'] == "info2023"){
+
+        echo $_GET['età'];
+    }
+    ?>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+    <?php 
+    if ($_GET['password'] == "info2023"){
+
+        echo "SPORT PREFERITO";
+    }
+    ?>    </div>
+    <div class="col">
+
+    <?php 
+    if ($_GET['password'] == "info2023"){
+
+        echo $_GET['sport_preferito'];
+    }
+    ?>
+
+    </div>
+  </div>
+</div>
+
+
+
+<?php   
+
+$colore = $_GET['colore_sfondo'];
+echo "body bgcolor = $colore"
+
 ?>
 </body>
