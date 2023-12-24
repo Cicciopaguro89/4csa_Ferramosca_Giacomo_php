@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <head>
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
       crossorigin="anonymous">
@@ -12,7 +11,6 @@
   </style>
 </head>
 <body>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
         crossorigin="anonymous"></script>
@@ -22,9 +20,9 @@
 <?php 
 if ($_GET['password'] == "password" && $_GET['utente'] == 'utente')
 {
-    echo 'Bentornato '.$_GET['utente'];
+    echo 'Bentornato '.$_GET['utente'];  
 } else
-{
+{ 
   echo "PASSWORD O UTENTE SBAGLIATI, RITENTA";
 }
 ?>
@@ -58,13 +56,8 @@ if ($_GET['password'] == "password" && $_GET['utente'] == 'utente')
     </div>
   </div>
 </div>
-
-
-
 <?php   
-
 $colore = $_GET['colore_sfondo'];
 echo "body bgcolor = $colore"
-
 ?>
 </body>
